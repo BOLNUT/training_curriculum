@@ -10,12 +10,12 @@ class CalendarsController < ApplicationController
   def create
     Plan.create(plan_params)
     redirect_to action: :index
-  end
+  end   
 
   private
 
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan) #モデル名を変更
   end
 
   def getWeek
